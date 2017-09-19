@@ -13,7 +13,6 @@ class App extends Component {
   render() {
     return (
       <div className="quotes">
-        <Header />
         <main>
           <Switch>
             <Route exact path='/' component={Home} />
@@ -23,7 +22,6 @@ class App extends Component {
             <Redirect to='/' />
           </Switch>
         </main>
-        <Footer />
       </div>
     );
   }
