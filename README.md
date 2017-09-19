@@ -3,7 +3,7 @@
 # Resting B Face App
 
 ## Team members 
-###Zarrina Niyazova, Natasha Umer, Richard Boles
+### Zarrina Niyazova, Natasha Umer, Richard Boles
 
 ## Description:
     This app will view an image and render results based off the persons facial expression using Microsoft Emotion API. It can also return results of pictures with multiple faces in the image. 
