@@ -15,7 +15,7 @@ class Home extends Component {
     this.state = {
       apiData: [],
       scores: [],
-      result:'Yes',
+      result: 0,
       happy: 'false',
       mad: 'false',
       url: '',
@@ -71,46 +71,52 @@ class Home extends Component {
       mad: this.state.inputHappyValue,
       url: this.state.inputURLValue,
       result: this.state.result
-      //user_id: this.state.user_id
+      user_id: this.state.user_id
     })
     .then(res => {
 
-      if (res.data.quote.id !== undefined) {
-        const newQuote = {
-          content: res.data.quote.content,
-          author: res.data.quote.author,
-          genre_type: res.data.quote.genre_type,
+    console.log(res.data);
 
-        }
-        /*  just what we discussed yesterday how to set state as an aray */
-        this.setState((prevState) => {
-          return {
-            quotes: prevState.quotes.concat(newQuote),
-          }
-        })
+      {
+      const newScore = {
+      happy: res.data.scores.happy,
+      mad: res.data.scores.mad,
+      url: res. data.scores.url,
+      result: res.data.scores.result,
+      name: res.data.scores.name,
+
+
+
       }
-    }).catch(err => console.log(err));
-  }
 
-
-
-
-
-
-
-
-
-
+      this.setState((prevState) => {
+        return {
+          scores: prevState.scores.concat(newScore),
+        }
+      })
+    }
+  }).catch(err => console.log(err));
+}
 
 
   render() {
     return (
-      <div className="App">
-      <p>hello world</p>
+      <div className="Home">
+        <div className="Home-header">
+        </div>
+        <div className="Home-intro">
+          <FaceForm handleformSubmit={this.handleInputFormSubmit}
+                     handleinputURLChange={this.handleinputURLChange}
+                     handleinputHappyChange={this.handleinputHappyChange}
+                     handleInputMadChange={this.handleInputMadChange}
+                     />
+          <Scores scores={this.state.scores}/>
+        </div>
       </div>
-
     );
   }
 }
+
+
 
 export default Home;
