@@ -1,0 +1,38 @@
+import React, { Component } from 'react';
+import './App.css';
+import {Route, Redirect, Switch} from 'react-router-dom';
+
+
+
+import Home from './components/Home';
+import FaceForm from './components/FaceForm';
+import About from './components/About';
+import ScoreList from './components/ScoreList';
+
+import Header from './components/partials/Header';
+import Footer from './components/partials/Footer';
+
+
+
+class App extends Component {
+  render() {
+    return (
+      <div className="scores">
+      <Header />
+        <main>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/api/scores" component={ScoreList} />
+            <Route exact path="/add" component={FaceForm} />
+            <Redirect to='/' />
+          </Switch>
+        </main>
+
+      </div>
+    );
+  }
+}
+
+export default App;
+
