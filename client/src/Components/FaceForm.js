@@ -13,8 +13,8 @@ class FaceForm extends Component {
       result: 0,
       inputHappyValue: 'false',
       inputMadValue: 'false',
-      inputURLValue: ''
-      //user_id: '',
+      inputURLValue: '',
+      user_id: '',
 
     }
 
@@ -22,6 +22,8 @@ class FaceForm extends Component {
     this.handleInputMadChange = this.handleInputMadChange.bind(this);
     this.handleInputURLChange = this.handleInputURLChange.bind(this);
     this.handleInputFormSubmit = this.handleInputFormSubmit.bind(this);
+    this.handleInputResultChange = this.handleInputResultChange.bind(this);
+    this.handleInputUserChange = this.handleInputUserChange.bind(this);
   }
 
   handleInputURLChange (event)  {
@@ -42,6 +44,18 @@ class FaceForm extends Component {
     });
   }
 
+
+  handleInputResultChange(event) {
+    this.setState({
+      result: event.target.value
+    });
+  }
+
+  handleInputUserChange(event) {
+    this.setState({
+      user_id: event.target.value
+    });
+  }
 
    handleInputFormSubmit(event) {
     event.preventDefault();
@@ -83,12 +97,16 @@ render() {
     return (
       <div className="App">
       <InputForm handleInputFormSubmit={this.handleInputFormSubmit}
-                 inputMadValue={this.inputMadValue}
+                 inputMadValue={this.state.inputMadValue}
                  handleInputMadChange={this.handleInputMadChange}
-                 inputHappyValue={this.inputHappyValue}
+                 inputHappyValue={this.state.inputHappyValue}
                  handleInputHappyChange={this.handleInputHappyChange}
-                 inputURLValue={this.inputURLValue}
+                 inputURLValue={this.state.inputURLValue}
                  handleInputURLChange={this.handleInputURLChange}
+                 handleInputResultChange={this.handleInputResultChange}
+                 result={this.state.result}
+                 handleInputUserChange={this.handleInputUserChange}
+                 user_id={this.state.user_id}
       />
       </div>
     );

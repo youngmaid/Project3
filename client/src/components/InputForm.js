@@ -27,9 +27,25 @@ class InputForm extends Component {
          <input
           type="text"
           value={this.props.inputURLValue}
-          name="genre_type"
+          name="url"
           placeholder="Add IMG Url Here"
           onChange={this.props.handleInputURLChange}
+        /><br/>
+
+          <input
+          type="text"
+          value={this.props.result}
+          name="result"
+          placeholder="enter result here"
+          onChange={this.props.handleInputResultChange}
+        /><br/>
+
+        <input
+          type="text"
+          value={this.props.user_id}
+          name="user_id"
+          placeholder="Add user id"
+          onChange={this.props.handleInputUserChange}
         /><br/>
 
         <button id="submit">Add FaceForm!</button>
