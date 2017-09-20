@@ -78,7 +78,7 @@ class FaceForm extends Component {
       const newScore = {
       happy: res.data.scores.happy,
       mad: res.data.scores.mad,
-      url: res. data.scores.url,
+      url: res.data.scores.url,
       result: res.data.scores.result,
       name: res.data.scores.name,
 
