@@ -15,10 +15,10 @@ class App extends Component {
       <div className="faces">
         <main>
           <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/About' component={About} />
-            <Route exact path="/bishfaces" component={FaceList} />
-            <Route exact path="/Add" component={FaceForm} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/faces" component={FaceList} />
+            <Route exact path="/add" component={FaceForm} />
             <Redirect to='/' />
           </Switch>
         </main>
