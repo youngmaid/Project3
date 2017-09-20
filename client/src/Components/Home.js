@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
+//import './App.css';
+
+//import FaceForm from './FaceForm';
+//import FaceList from './FaceList';
+//import Result from './Result';
+//import ImgForm from './ImgForm';
+
 import './App.css';
 
 // import FaceForm from './components/FaceForm';
@@ -8,42 +16,51 @@ import Result from './components/Result';
 import ImgForm from './components/ImgForm';
 
 
+
 class Home extends Component {
 
   constructor() {
     super();
     this.state = {
       apiData: [],
-      scores: [],
+      //scores: [],
       result: 0,
-      happy: 'false',
-      mad: 'false',
-      url: '',
+      //happy: 'false',
+      //mad: 'false',
+      //url: ''
       //user_id: '',
 
+
     }
+
+
+    /// I'm commenting all of the form submit stuff out cause I'm moving
+    // it to the form component.
+
+
     //this.calculateResult = this.calculateResult.bind(this)
     // *****since we don't have an API I'm going to comment this out
 
-    this.handleinputHappyChange = this.handleinputHappyChange.bind(this);
-    this.handleInputMadChange = this.handleInputMadChange.bind(this);
 
-    this.handleInputURLChange = this.handleInputURLchange.bind(this);
+    //this.handleInputHappyChange = this.handleInputHappyChange.bind(this);
+    //this.handleInputMadChange = this.handleInputMadChange.bind(this);
+
+    //this.handleInputURLChange = this.handleInputURLChange.bind(this);
     // for now we're gonna have a user manually input URL data and not
     // submit from a URL, we're not gonna change the state of result, witout API
 
     //this.handleInputURLSubmit = this.handleInputURLSubmit.bind(this);
     // *** since we don't  have an API I'm gonna comment this out for now
-    this.handleInputFormSubmit = this.handleInputFormSubmit.bind(this);
+    //this.handleInputFormSubmit = this.handleInputFormSubmit.bind(this);
   }
 
   /*calculateResult(){
 
   } */
 
-  handleInputURLChange (event)  {
+  /*handleInputURLChange (event)  {
     this.setState({
-      url: event.target.value
+      inputURLValue: event.target.value
     });
   }
 
@@ -60,7 +77,7 @@ class Home extends Component {
   }
 
 
- handleInputSubmit(event) {
+ handleInputFormSubmit(event) {
     event.preventDefault();
     console.log(this.state.url)
     console.log(this.state.result)
@@ -70,8 +87,8 @@ class Home extends Component {
       happy: this.state.inputMadValue,
       mad: this.state.inputHappyValue,
       url: this.state.inputURLValue,
-      result: this.state.result
-      user_id: this.state.user_id
+      result: this.state.result,
+      user_id: this.state.user_id,
     })
     .then(res => {
 
@@ -96,26 +113,35 @@ class Home extends Component {
       })
     }
   }).catch(err => console.log(err));
-}
+} */
 
-
+// for testing purposes
   render() {
     return (
       <div className="Home">
-        <div className="Home-header">
-        </div>
-        <div className="Home-intro">
-          <FaceForm handleformSubmit={this.handleInputFormSubmit}
-                     handleinputURLChange={this.handleinputURLChange}
-                     handleinputHappyChange={this.handleinputHappyChange}
-                     handleInputMadChange={this.handleInputMadChange}
-                     />
-          <Scores scores={this.state.scores}/>
-        </div>
+          <p>result:{this.state.result}</p>
+          <p>testing</p>
+          <p>happy:{this.state.happy}</p>
+
       </div>
     );
   }
 }
+
+  //render() {
+   // return (
+    //  <div className="Home">
+     //     <FaceForm handleformSubmit={this.handleInputFormSubmit}
+       //              handleinputURLChange={this.handleinputURLChange}
+       //              handleinputHappyChange={this.handleinputHappyChange}
+        //             handleInputMadChange={this.handleInputMadChange}
+          //           />
+         // <Scores scores={this.state.scores}/>
+
+      //</div>
+   // );
+ // }
+//}
 
 
 
