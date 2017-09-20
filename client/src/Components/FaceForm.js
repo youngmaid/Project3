@@ -1,33 +1,26 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import InputForm from './InputForm';
 
-// we need to do the API call from FaceForm.
+
 class FaceForm extends Component {
-// use this.result here
+
  constructor() {
     super();
     this.state = {
 
-      //scores: [],
+      scores: [],
       result: 0,
-      happy: 'false',
-      mad: 'false',
-      url: ''
+      inputHappyValue: 'false',
+      inputMadValue: 'false',
+      inputURLValue: ''
       //user_id: '',
 
     }
-    //this.calculateResult = this.calculateResult.bind(this)
-    // *****since we don't have an API I'm going to comment this out
 
     this.handleInputHappyChange = this.handleInputHappyChange.bind(this);
     this.handleInputMadChange = this.handleInputMadChange.bind(this);
-
     this.handleInputURLChange = this.handleInputURLChange.bind(this);
-    // for now we're gonna have a user manually input URL data and not
-    // submit from a URL, we're not gonna change the state of result, witout API
-
-    //this.handleInputURLSubmit = this.handleInputURLSubmit.bind(this);
-    // *** since we don't  have an API I'm gonna comment this out for now
     this.handleInputFormSubmit = this.handleInputFormSubmit.bind(this);
   }
 
@@ -52,7 +45,7 @@ class FaceForm extends Component {
 
    handleInputFormSubmit(event) {
     event.preventDefault();
-    console.log(this.state.url)
+    console.log(this.state.inputURLValue)
     console.log(this.state.result)
     console.log(this.state.inputMadValue)
 
@@ -75,8 +68,6 @@ class FaceForm extends Component {
       result: res.data.scores.result,
       name: res.data.scores.name,
 
-
-
       }
 
       this.setState((prevState) => {
@@ -88,35 +79,18 @@ class FaceForm extends Component {
   }).catch(err => console.log(err));
 }
 
-  render() {
+render() {
     return (
-      <form
-        className="add-faces-form"
-        onSubmit={this.handleInputFormSubmit}
-      >
-        <input
-          type="text"
-          value={this.inputMadValue}
-          name="mad"
-          placeholder="are you mad?"
-          onChange={this.handleInputMadChange}
-        /><br/>
-        <input
-          type="text"
-          value={this.inputHappyValue}
-          name="happy"
-          placeholder="are you happy"
-          onChange={this.handleInputHappyChange}
-        /><br/>
-         <input
-          type="text"
-          value={this.inputURLValue}
-          name="genre_type"
-          placeholder="Add IMG Url Here"
-          onChange={this.handleInputURLChange}
-        /><br/>
-        <button id="submit">Add FaceForm!</button>
-      </form>
+      <div className="App">
+      <InputForm handleInputFormSubmit={this.handleInputFormSubmit}
+                 inputMadValue={this.inputMadValue}
+                 handleInputMadChange={this.handleInputMadChange}
+                 inputHappyValue={this.inputHappyValue}
+                 handleInputHappyChange={this.handleInputHappyChange}
+                 inputURLValue={this.inputURLValue}
+                 handleInputURLChange={this.handleInputURLChange}
+      />
+      </div>
     );
   }
 }
