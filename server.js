@@ -26,6 +26,6 @@ const scoresRouter = require('./routes/scores');
 app.use('/api/scores', scoresRouter);
 
 app.get('*', function(req, res) {
-  res.status(404).send({message: 'Hmm...Hot Found.'});
+  res.status(404).send({message: 'Hmm...Not Found.'});
 });
 

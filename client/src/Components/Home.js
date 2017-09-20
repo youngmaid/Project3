@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import axios from 'axios'; */
+import axios from 'axios';
 import './App.css';
 
-import FaceForm from './components/FaceForm';
-import FaceList from './components/FaceFeed';
+// import FaceForm from './components/FaceForm';
+// import FaceList from './components/FaceList';
 import Result from './components/Result';
-import ImgForm from './components/ImgForm'
+import ImgForm from './components/ImgForm';
 
 
 class Home extends Component {
