@@ -1,19 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-//import './App.css';
 
-//import FaceForm from './FaceForm';
-//import FaceList from './FaceList';
-//import Result from './Result';
-//import ImgForm from './ImgForm';
-
-import './App.css';
-
-// import FaceForm from './components/FaceForm';
-// import FaceList from './components/FaceList';
-import Result from './components/Result';
-import ImgForm from './components/ImgForm';
+import Result from './Result';
+import ImgForm from './ImgForm';
 
 
 
