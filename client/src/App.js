@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="scores">
-
+      <Header />
         <main>
           <Switch>
             <Route exact path="/" component={Home} />
