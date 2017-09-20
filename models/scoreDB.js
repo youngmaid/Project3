@@ -4,7 +4,7 @@ module.exports = {
 
   findAll() {
     return db.many(`
-      SELECT scores.id, happy, mad, url, result, user_id, name
+      SELECT scores.id, happy, mad, url, result, name
       FROM scores INNER JOIN users ON scores.user_id = users.id
       ORDER BY id
       `);
