@@ -91,8 +91,8 @@ class FaceForm extends Component {
   render() {
     return (
       <form
-        className="add-quote-form"
-        onSubmit={this.props.handleInputFormSubmit}
+        className="add-faces-form"
+        onSubmit={this.handleInputFormSubmit}
       >
         <input
           type="text"
