@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import axios from 'axios'; */
-import './App.css';
+import axios from 'axios';
+//import './App.css';
 
-import FaceForm from './components/FaceForm';
-import FaceList from './components/FaceFeed';
-import Result from './components/Result';
-import ImgForm from './components/ImgForm'
+//import FaceForm from './FaceForm';
+//import FaceList from './FaceList';
+//import Result from './Result';
+//import ImgForm from './ImgForm';
 
 
 class Home extends Component {
@@ -18,17 +18,17 @@ class Home extends Component {
       result: 0,
       happy: 'false',
       mad: 'false',
-      url: '',
+      url: ''
       //user_id: '',
 
     }
     //this.calculateResult = this.calculateResult.bind(this)
     // *****since we don't have an API I'm going to comment this out
 
-    this.handleinputHappyChange = this.handleinputHappyChange.bind(this);
+    this.handleInputHappyChange = this.handleInputHappyChange.bind(this);
     this.handleInputMadChange = this.handleInputMadChange.bind(this);
 
-    this.handleInputURLChange = this.handleInputURLchange.bind(this);
+    this.handleInputURLChange = this.handleInputURLChange.bind(this);
     // for now we're gonna have a user manually input URL data and not
     // submit from a URL, we're not gonna change the state of result, witout API
 
@@ -60,7 +60,7 @@ class Home extends Component {
   }
 
 
- handleInputSubmit(event) {
+ handleInputFormSubmit(event) {
     event.preventDefault();
     console.log(this.state.url)
     console.log(this.state.result)
@@ -70,8 +70,8 @@ class Home extends Component {
       happy: this.state.inputMadValue,
       mad: this.state.inputHappyValue,
       url: this.state.inputURLValue,
-      result: this.state.result
-      user_id: this.state.user_id
+      result: this.state.result,
+      user_id: this.state.user_id,
     })
     .then(res => {
 
@@ -98,24 +98,33 @@ class Home extends Component {
   }).catch(err => console.log(err));
 }
 
-
+// for testing purposes
   render() {
     return (
       <div className="Home">
-        <div className="Home-header">
-        </div>
-        <div className="Home-intro">
-          <FaceForm handleformSubmit={this.handleInputFormSubmit}
-                     handleinputURLChange={this.handleinputURLChange}
-                     handleinputHappyChange={this.handleinputHappyChange}
-                     handleInputMadChange={this.handleInputMadChange}
-                     />
-          <Scores scores={this.state.scores}/>
-        </div>
+          <p>result:{this.state.result}</p>
+          <p>testing</p>
+          <p>happy:{this.state.happy}</p>
+
       </div>
     );
   }
 }
+
+  //render() {
+   // return (
+    //  <div className="Home">
+     //     <FaceForm handleformSubmit={this.handleInputFormSubmit}
+       //              handleinputURLChange={this.handleinputURLChange}
+       //              handleinputHappyChange={this.handleinputHappyChange}
+        //             handleInputMadChange={this.handleInputMadChange}
+          //           />
+         // <Scores scores={this.state.scores}/>
+
+      //</div>
+   // );
+ // }
+//}
 
 
 

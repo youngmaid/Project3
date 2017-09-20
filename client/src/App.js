@@ -3,16 +3,16 @@ import './App.css';
 import {Route, Redirect, Switch} from 'react-router-dom';
 
 
-import Home from './components/Home';
-import FaceList from './components/QuoteList'
-import FaceForm from './components/FaceForm'
-import About from './components/About'
+import Home from './Components/Home';
+import FaceList from './Components/FaceList'
+import FaceForm from './Components/FaceForm'
+import About from './Components/About'
 
 
 class App extends Component {
   render() {
     return (
-      <div className="quotes">
+      <div className="faces">
         <main>
           <Switch>
             <Route exact path='/' component={Home} />
