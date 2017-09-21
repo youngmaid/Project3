@@ -9,7 +9,13 @@ class SingleScore extends Component {
     super(props);
     this.state = {
       id: this.props.match.params.id,
-      score: null,
+        score: {
+        happy: '',
+        mad: '',
+        url: '',
+        result: '',
+        user_id: '',
+      },
       scoreDataReceived: false,
     }
   }
@@ -24,6 +30,15 @@ class SingleScore extends Component {
       }
     });
   });
+}
+
+
+updateScore(event) {
+  let updatedScore = Object.assign({}, this.state.score)
+  updatedScore['url'] = event.target.value;
+  this.setState({
+    score: updatedScore,
+  })
 }
 
 renderScore() {
