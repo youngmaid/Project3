@@ -9,21 +9,10 @@ import ImgForm from './ImgForm';
 
 class Home extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      apiData: [],
-      result: 0,
-    }
-  }
-
   render() {
     return (
       <div className="Home">
-          <p>result:{this.state.result}</p>
-          <p>testing</p>
-          <p>happy:{this.state.happy}</p>
-
+          <h3>Hi! Welcome to app!</h3>
       </div>
     );
   }

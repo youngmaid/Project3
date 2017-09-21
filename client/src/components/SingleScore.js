@@ -29,12 +29,14 @@ class SingleScore extends Component {
 renderScore() {
     if (this.state.scoreDataReceived === true) {
       return (
+        <div>
         <div className="my-score">
         <h3>{this.state.score.happy}</h3>
         <h3>{this.state.score.mad}</h3>
         <h3>{this.state.score.url}</h3>
         <h3>{this.state.score.result}</h3>
         <h3>{this.state.score.name}</h3>
+        </div>
         </div>
       );
     } else return <Loading />;
