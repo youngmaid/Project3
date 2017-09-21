@@ -24,7 +24,6 @@ app.get('/', function(req, res) {
 
 const scoresRouter = require('./routes/scores');
 app.use('/api/scores', scoresRouter);
-app.use('/api/scores/:id', scoresRouter);
 
 app.get('*', function(req, res) {
   res.status(404).send({message: 'Hmm...Not Found.'});

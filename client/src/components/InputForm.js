@@ -57,21 +57,7 @@ class InputForm extends Component {
 
 export default InputForm;
 
-//
 
-
-
-// label id="oneUser" for="user_id"> Name
-//             <select name="user_id" type='text' id="findUser">
-//               <option value='1'>Julia</option>
-//               <option value='2'>Ann</option>
-//               <option value='3'>Jess</option>
-//               <option value='4'>Norma</option>
-//               <option value='5'>Mike</option>
-//               <option value='6'>Jane</option>
-//               <option value='7'>Tom</option>
-//             </select>
-//           </label
 
 
 
