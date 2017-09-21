@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import InputForm from './InputForm';
+import ScoreList from './ScoreList';
 
 
 class FaceForm extends Component {
@@ -10,12 +11,12 @@ class FaceForm extends Component {
     this.state = {
 
       scores: [],
-      result: 0,
-      inputHappyValue: 'false',
-      inputMadValue: 'false',
+      result: '',
+      inputHappyValue: '',
+      inputMadValue: '',
       inputURLValue: '',
       user_id: '',
-
+      scoreListDataReceived: false,
     }
 
     this.handleInputHappyChange = this.handleInputHappyChange.bind(this);
@@ -43,7 +44,6 @@ class FaceForm extends Component {
       inputMadValue: event.target.value
     });
   }
-
 
   handleInputResultChange(event) {
     this.setState({
@@ -81,19 +81,18 @@ class FaceForm extends Component {
       url: res.data.scores.url,
       result: res.data.scores.result,
       name: res.data.scores.name,
-
       }
 
       this.setState((prevState) => {
         return {
           scores: prevState.scores.concat(newScore),
-        }
-      })
-    }
-  }).catch(err => console.log(err));
-}
+         }
+       })
+      }
+    }).catch(err => console.log(err));
+  }
 
-render() {
+  render() {
     return (
       <div className="App">
       <InputForm handleInputFormSubmit={this.handleInputFormSubmit}
