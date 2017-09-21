@@ -20,7 +20,7 @@ class InputForm extends Component {
           type="text"
           value={this.props.inputMadValue}
           name="mad"
-          placeholder="are you mad?"
+          placeholder="bad day?"
           onChange={this.props.handleInputMadChange}
         /><br/>
 
@@ -40,13 +40,14 @@ class InputForm extends Component {
           onChange={this.props.handleInputResultChange}
         /><br/>
 
-        <input
+         <input
           type="text"
           value={this.props.user_id}
           name="user_id"
           placeholder="Add user id"
           onChange={this.props.handleInputUserChange}
-        /><br/>
+          />
+          <br />
 
         <button id="submit">Add FaceForm!</button>
       </form>
@@ -55,3 +56,28 @@ class InputForm extends Component {
 }
 
 export default InputForm;
+
+//
+
+
+
+// label id="oneUser" for="user_id"> Name
+//             <select name="user_id" type='text' id="findUser">
+//               <option value='1'>Julia</option>
+//               <option value='2'>Ann</option>
+//               <option value='3'>Jess</option>
+//               <option value='4'>Norma</option>
+//               <option value='5'>Mike</option>
+//               <option value='6'>Jane</option>
+//               <option value='7'>Tom</option>
+//             </select>
+//           </label
+
+
+
+
+
+
+
+
+

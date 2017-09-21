@@ -8,10 +8,10 @@ import Home from './components/Home';
 import FaceForm from './components/FaceForm';
 import About from './components/About';
 import ScoreList from './components/ScoreList';
+import SingleScore from './components/SingleScore';
 
 import Header from './components/partials/Header';
 import Footer from './components/partials/Footer';
-
 
 
 class App extends Component {
@@ -21,11 +21,12 @@ class App extends Component {
       <Header />
         <main>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/api/scores" component={ScoreList} />
-            <Route exact path="/add" component={FaceForm} />
-            <Redirect to='/' />
+          <Route exact path='/api/scores/:id' component={SingleScore} />
+          <Route exact path='/api/scores' component={ScoreList} />
+          <Route exact path='/add' component={FaceForm} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/about' component={About} />
+          <Redirect to='/' />
           </Switch>
         </main>
 
@@ -35,4 +36,4 @@ class App extends Component {
 }
 
 export default App;
-
+// <Redirect to='/' />
