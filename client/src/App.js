@@ -21,12 +21,12 @@ class App extends Component {
       <Header />
         <main>
           <Switch>
-          <Route exact path='/api/scores/:id' component={SingleScore} />
-          <Route exact path='/api/scores' component={ScoreList} />
-          <Route exact path='/add' component={FaceForm} />
-          <Route exact path='/' component={Home} />
-          <Route exact path='/about' component={About} />
-          <Redirect to='/' />
+            <Route exact path='/api/scores/:id' component={SingleScore} />
+            <Route exact path='/api/scores' component={ScoreList} />
+            <Route exact path='/add' component={FaceForm} />
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Redirect to='/' />
           </Switch>
         </main>
 
@@ -36,4 +36,4 @@ class App extends Component {
 }
 
 export default App;
-// <Redirect to='/' />
+
