@@ -6,6 +6,9 @@
 # testing
 /coverage
 
+# package lock causing problems
+package-lock.json
+
 # production
 /build
 
