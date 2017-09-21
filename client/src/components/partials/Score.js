@@ -11,7 +11,7 @@ class Score extends Component {
         <h3>{this.props.score.url}</h3>
         <h3>{this.props.score.result}</h3>
         <h3>{this.props.score.name}</h3>
-        <Link to={`/scores/${this.props.score.id}`}>See score </Link>
+        <Link to={`/api/scores/${this.props.score.id}`}>See score </Link>
       </div>
     );
   };
