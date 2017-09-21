@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 
 class Score extends Component {
   render() {
-    console.log(this.props.score.happy)
     return (
       <div className="my-score">
         <h3>{this.props.score.happy}</h3>
