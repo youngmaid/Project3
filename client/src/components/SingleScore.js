@@ -24,6 +24,7 @@ class SingleScore extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   componentDidMount(){
@@ -106,7 +107,7 @@ renderScore() {
 
         </div>
         {this.state.isEditing ? <button type="submit">Save</button> : ''}
-        {this.state.isEditing ? <button onClick={this.handleDelete}>Delete</button> : ''}
+        {this.state.isEditing ? <button onClick={this.handleCancel}>Cancel</button> : ''}
         </form>
 
       );
@@ -136,21 +137,6 @@ renderScore() {
 }
 
 export default SingleScore;
-
-
-
-// <label>
-//         //   Name
-//         //   <select value={this.state.score.user_id} onChange={this.handleChange}>
-//         //     <option value='1'>Julia</option>
-//         //     <option value='2'>Ann</option>
-//         //     <option value='3'>Jess</option>
-//         //     <option value='4'>Norma</option>
-//         //     <option value='5'>Mike</option>
-//         //     <option value='6'>Jane</option>
-//         //     <option value='7'>Tom</option>
-//         //   </select>
-//         // </label>
 
 
 

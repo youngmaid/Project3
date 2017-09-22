@@ -42,8 +42,8 @@ module.exports = {
       mad = $/mad/,
       url = $/url/,
       result = $/result/,
-      user_id = $/user_id/,
-      WHERE id = ${id}
+      user_id = $/user_id/
+      WHERE scores.id = ${id}
       RETURNING *
       `, score);
   },
@@ -52,7 +52,7 @@ module.exports = {
     return db.none(`
     DELETE
     FROM scores
-    WHERE id = $1
+    WHERE scores.id = $1
     `, id);
   },
 };
