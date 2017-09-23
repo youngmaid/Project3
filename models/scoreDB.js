@@ -21,6 +21,7 @@ module.exports = {
 
   save(score) {
     score.user_id = Number.parseInt(score.user_id, 10);
+    console.log(score.user_id);
     return db.one(`
       INSERT INTO scores
       (happy, mad, url, result, user_id)
@@ -31,7 +32,9 @@ module.exports = {
       `, score);
   },
 
-  update(score) {
+  update(score, id) {
+    score.user_id = Number.parseInt(score.user_id, 10);
+    console.log(score.user_id);
     return db.one(`
       UPDATE scores
       SET
@@ -40,7 +43,7 @@ module.exports = {
       url = $/url/,
       result = $/result/,
       user_id = $/user_id/
-      WHERE id = $/id/
+      WHERE scores.id = ${id}
       RETURNING *
       `, score);
   },
@@ -49,7 +52,7 @@ module.exports = {
     return db.none(`
     DELETE
     FROM scores
-    WHERE id = $1
+    WHERE scores.id = $1
     `, id);
   },
 };

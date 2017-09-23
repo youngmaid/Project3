@@ -4,18 +4,30 @@ import axios from 'axios';
 
 import Score from './partials/Score';
 import Loading from './partials/Loading';
+import SingleScore from './SingleScore';
+
 
 class ScoreList extends Component {
   constructor() {
     super();
     this.state = {
       scores: [],
+      result: '',
+      inputHappyValue: '',
+      inputMadValue: '',
+      inputURLValue: '',
+      user_id: '',
       scoreListDataReceived: false,
-    }
   }
 
+this.getAllScores = this.getAllScores.bind(this);
 
+}
   componentDidMount(){
+ this.getAllScores()
+}
+
+getAllScores() {
   axios.get('http://localhost:3001/api/scores')
   .then(res => {
     this.setState(prevState => {
@@ -26,10 +38,16 @@ class ScoreList extends Component {
     });
   });
 }
+
+handleScoreEdit(event) {
+  event.preventDefault();
+}
+
   renderScoreList() {
     if (this.state.scoreListDataReceived === true) {
       return this.state.scores.map((score) => {
-        return <Score score={score} key={score.id} />
+        return <Score score={score} key={score.id}
+        history={this.props.history}/>
       });
     } else return <Loading />
   }
@@ -38,6 +56,7 @@ class ScoreList extends Component {
     return (
       <div className="scorelist">
         {this.renderScoreList()}
+
       </div>
     );
   };

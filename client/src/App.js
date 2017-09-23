@@ -12,6 +12,7 @@ import SingleScore from './components/SingleScore';
 
 import Header from './components/partials/Header';
 import Footer from './components/partials/Footer';
+import tokenService from './services/TokenServices';
 
 
 class App extends Component {

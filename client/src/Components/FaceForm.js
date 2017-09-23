@@ -59,9 +59,6 @@ class FaceForm extends Component {
 
    handleInputFormSubmit(event) {
     event.preventDefault();
-    console.log(this.state.inputURLValue)
-    console.log(this.state.result)
-    console.log(this.state.inputMadValue)
 
     axios.post('http://localhost:3001/api/scores', {
       happy: this.state.inputMadValue,

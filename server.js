@@ -3,6 +3,7 @@ const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const { authRouter, AuthService } = require('./auth');
 
 const app = express();
 
@@ -22,6 +23,10 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
 
+// ROUTE HANDLER
+// app.use('/auth', authRouter);
+// app.use('/api', AuthService.isAuth(), ScoresRouter);
+
 const scoresRouter = require('./routes/scores');
 app.use('/api/scores', scoresRouter);
 
@@ -30,6 +35,10 @@ app.get('*', function(req, res) {
 });
 
 
+
+
+
+module.exports = app;
 
 
 
