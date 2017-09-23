@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
 class Score extends Component {
+
   render() {
     return (
       <div className="my-score">
@@ -11,6 +12,7 @@ class Score extends Component {
         <h3>{this.props.score.result}</h3>
         <h3>{this.props.score.name}</h3>
         <Link to={`/api/scores/${this.props.score.id}`}>See score </Link>
+
       </div>
     );
   };

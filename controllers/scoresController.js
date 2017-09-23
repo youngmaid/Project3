@@ -54,8 +54,9 @@ module.exports = {
       url: req.body.url,
       result: req.body.result,
       user_id: req.body.user_id,
-    }, req.params.id).then(score => {
-      res.redirect('/scores');
+    }, req.params.id)
+    .then(score => {
+      // res.redirect('/api/scores');
     }).catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -64,9 +65,13 @@ module.exports = {
 
    destroy(req, res) {
     scoreDB.destroy(req.params.id)
-    .then(() => next())
-    .catch(err => next(err));
-   },
+    .then(() => {
+      //res.redirect('/api/scores');
+    }).catch(err => {
+        console.log(err);
+        res.status(400).json({message: '400', err});
+      });
+    },
 
    showScoreForm: (req, res) => {
     res.json({
