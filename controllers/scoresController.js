@@ -66,7 +66,7 @@ module.exports = {
    destroy(req, res) {
     scoreDB.destroy(req.params.id)
     .then(() => {
-      res.json({message: 'ok'});
+      //res.redirect('/api/scores');
     }).catch(err => {
         console.log(err);
         res.status(400).json({message: '400', err});

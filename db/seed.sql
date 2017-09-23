@@ -1,13 +1,13 @@
 \c scores_dev;
 
-INSERT INTO users (name) VALUES
-('Julia'),
-('Ann'),
-('Jess'),
-('Norma'),
-('Mike'),
-('Jane'),
-('Tom');
+INSERT INTO users (name, email, password) VALUES
+('Julia', 'julia@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
+('Ann', 'ann@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
+('Jess', 'jess@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
+('Norma', 'norma@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
+('Mike', 'mike@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
+('Jane', 'jane@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
+('Tom', 'tom@ggmail.com', '@#%^^$#@@##EFDSVDFVSD');
 
 INSERT INTO scores (happy, mad, url, result, user_id) VALUES
 (

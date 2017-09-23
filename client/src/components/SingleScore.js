@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 
 import Loading from './partials/Loading';
 import axios from 'axios';
+import { Route, Redirect } from 'react-router';
+import history from './partials/History';
+import ScoreList from './ScoreList';
+
+
 
 
 class SingleScore extends Component {
   constructor(props) {
+
     super(props);
+
     this.state = {
+        scores: [],
         isEditing: false,
         editVal: null,
         id: this.props.match.params.id,
@@ -25,6 +33,8 @@ class SingleScore extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.getAllScores = this.getAllScores.bind(this);
+
   }
 
   componentDidMount(){
@@ -34,14 +44,29 @@ class SingleScore extends Component {
       return {
         score: res.data.data.score,
         scoreDataReceived: true,
+         }
+      });
+    });
+  }
+
+  getAllScores() {
+  axios.get('http://localhost:3001/api/scores')
+  .then(res => {
+    this.setState(prevState => {
+      return {
+        scores: res.data.data.scores,
       }
     });
   });
-  }
+}
 
   handleDelete() {
+    console.log('delete')
     axios.delete(`http://localhost:3001/api/scores/${this.state.id}`)
+    this.props.history.push('/api/scores')
   }
+
+
 
   handleEdit() {
     this.setState({
@@ -69,9 +94,7 @@ class SingleScore extends Component {
       result: this.state.score.result,
       user_id: this.state.score.user_id,
     })
-    .then(res => {
-    console.log(res.data);
-    }).catch(err => console.log(err));
+    this.getAllScores()
   }
 
 
@@ -81,10 +104,10 @@ class SingleScore extends Component {
     })
   }
 
-renderScore() {
+  renderScore() {
     if (this.state.scoreDataReceived === true) {
       return (
-
+        <div>
         <form onSubmit={this.handleSubmit}>
         <div className="my-score">
         <h3>{this.state.isEditing ? <input onChange={this.handleChange} name="happy" type="text" value={this.state.score.happy}/> : this.state.score.happy}</h3>
@@ -109,7 +132,7 @@ renderScore() {
         {this.state.isEditing ? <button type="submit">Save</button> : ''}
         {this.state.isEditing ? <button onClick={this.handleCancel}>Cancel</button> : ''}
         </form>
-
+        </div>
       );
     } else return <Loading />;
   }
@@ -125,20 +148,20 @@ renderScore() {
   }
   }
 
-
   render() {
+
     return (
       <div className="single-score">
         {this.renderScore()}
         {this.renderButtons()}
+        {this.getAllScores()}
+
       </div>
     );
   };
 }
 
 export default SingleScore;
-
-
 
 
 
