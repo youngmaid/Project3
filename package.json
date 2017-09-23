@@ -4,6 +4,7 @@
   "description": "GA WDI group project-3",
   "main": "server.js",
   "dependencies": {
+    "algorithmia": "^0.3.10",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.1",
     "cors": "^2.8.4",
