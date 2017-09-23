@@ -1,7 +1,7 @@
 const scoreDB = require('../models/scoreDB');
 const algorithmia = require("algorithmia");
 
-var api_key = 'simSjj4D3o74j8nEEeWInGtEiW/1'; // PLEASE COPY AND PASTE MY API KEY HERE!!
+var api_key = ; // PLEASE COPY AND PASTE MY API KEY HERE!!
 // IF YOU DONT DO THIS THE APP WILL NOT WORK!!!.
 
 var client = algorithmia(api_key);
