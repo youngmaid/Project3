@@ -24,8 +24,8 @@ class App extends Component {
           <Switch>
             <Route exact path='/api/scores/:id' component={SingleScore} />
             <Route exact path='/api/scores' component={ScoreList} />
-            <Route exact path='/add' component={FaceForm} />
-            <Route exact path='/' component={Home} />
+            <Route exact path='/' component={FaceForm} />
+            <Route exact path='/add' component={Home} />
             <Route exact path='/about' component={About} />
             <Redirect to='/' />
           </Switch>

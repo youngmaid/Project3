@@ -26,7 +26,7 @@ class InputForm extends Component {
 
          <input
           type="text"
-          value={this.props.inputURLValue}
+          value={this.props.inputimg}
           name="url"
           placeholder="Add IMG Url Here"
           onChange={this.props.handleInputURLChange}
