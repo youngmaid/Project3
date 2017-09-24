@@ -12,6 +12,8 @@ app.listen(PORT, function() {
   console.log(`listening on port ${PORT}`);
 });
 
+app.set('superSecret', process.env.SERVER_SECRET);
+
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
@@ -23,23 +25,19 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-// ROUTE HANDLER
-// app.use('/auth', authRouter);
-// app.use('/api', AuthService.isAuth(), ScoresRouter);
-
+//ROUTE HANDLER
 const scoresRouter = require('./routes/scores');
+app.use('/auth', authRouter);
+app.use('/api/scores', AuthService.isAuth(), scoresRouter);
+
+//const scoresRouter = require('./routes/scores');
 app.use('/api/scores', scoresRouter);
 
 app.get('*', function(req, res) {
   res.status(404).send({message: 'Hmm...Not Found.'});
 });
 
-
-
-
-
 module.exports = app;
-
 
 
 

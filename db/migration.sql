@@ -1,4 +1,4 @@
-\c scores_dev;
+\c faces_dev;
 DROP TABLE IF EXISTS scores;
 DROP TABLE IF EXISTS users;
 

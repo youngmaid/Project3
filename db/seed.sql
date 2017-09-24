@@ -1,4 +1,4 @@
-\c scores_dev;
+\c faces_dev;
 
 INSERT INTO users (name, email, password) VALUES
 ('Julia', 'julia@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
