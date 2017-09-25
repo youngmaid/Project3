@@ -1,0 +1,42 @@
+p {
+  text-align: center;
+}
+
+h6 {
+  background-image: url('https://image.flaticon.com/icons/svg/190/190420.svg');
+}
+
+p .bgcolor {
+  background-color: white;
+}
+
+.bgcolor {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    position: relative;
+    -webkit-animation-name: me;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-iteration-count: 3;
+    animation-name: me;
+    animation-duration: 7s;
+    animation-iteration-count: 4;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes me {
+    0%   {background-color:black; left:0px; top:0px;}
+    25%  {background-color:grey; left:200px; top:0px;}
+    50%  {background-color:silver; left:200px; top:200px;}
+    75%  {background-color:white; left:0px; top:200px;}
+    100% {background-color:silver; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes me {
+    0%   {background-color:white; left:0px; top:0px;}
+    25%  {background-color:silver; left:200px; top:0px;}
+    50%  {background-color:grey; left:200px; top:200px;}
+    75%  {background-color:black; left:0px; top:200px;}
+    100% {background-color:silver; left:0px; top:0px;}
+}
