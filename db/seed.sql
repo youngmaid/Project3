@@ -1,13 +1,13 @@
-\c faces_dev;
+\c scores_dev;
 
-INSERT INTO users (name, email) VALUES
-('Julia', 'julia@ggmail.com'),
-('Ann', 'ann@ggmail.com'),
-('Jess', 'jess@ggmail.com'),
-('Norma', 'norma@ggmail.com'),
-('Mike', 'mike@ggmail.com'),
-('Jane', 'jane@ggmail.com'),
-('Tom', 'tom@ggmail.com');
+INSERT INTO users (name, email, password) VALUES
+('Julia', 'julia@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
+('Ann', 'ann@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
+('Jess', 'jess@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
+('Norma', 'norma@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
+('Mike', 'mike@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
+('Jane', 'jane@ggmail.com', '@#%^^$#@@##EFDSVDFVSD'),
+('Tom', 'tom@ggmail.com', '@#%^^$#@@##EFDSVDFVSD');
 
 INSERT INTO scores (happy, mad, url, result, user_id) VALUES
 (
@@ -52,4 +52,3 @@ INSERT INTO scores (happy, mad, url, result, user_id) VALUES
   2,
   6
 );
-
