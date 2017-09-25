@@ -34,6 +34,7 @@ class Home extends Component {
       this.handleImgSubmit = this.handleImgSubmit.bind(this);
       this.handleInputUserChange = this.handleInputUserChange.bind(this);
       this.handleInputResultChange = this.handleInputResultChange.bind(this);
+      this.reload = this.reload.bind(this);
      }
 
   handleInputURLChange (event)  {
@@ -66,6 +67,10 @@ class Home extends Component {
     });
   }
 
+  reload() {
+  window.location.reload()
+  }
+
   handleImgSubmit(event) {
     event.preventDefault();
     this.setState ({
@@ -87,7 +92,7 @@ class Home extends Component {
         sentence: result[1]
       })
     }).catch(err => {
-    this.setState({showLoader: false})
+    this.setState({showLoader: false, sentence: "Unable to Process. Please upload a valid photo URL of a human face."})
     console.log(err)
     })
   }
@@ -152,6 +157,7 @@ class Home extends Component {
         <p>{this.state.sentence}</p>
         {loader}
         {showimg}
+        <button onClick={this.reload}>click here to reload</button>
       </div>
       <div className="App">
         <InputForm handleInputFormSubmit={this.handleInputFormSubmit}
