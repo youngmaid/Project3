@@ -4,7 +4,7 @@ module.exports = {
 
   findAll() {
     return db.many(`
-      SELECT scores.id, happy, mad, url, result, name
+      SELECT scores.id, happy, mad, url, result, name, email
       FROM scores INNER JOIN users ON scores.user_id = users.id
       ORDER BY id
       `);
@@ -12,7 +12,7 @@ module.exports = {
 
   findById(id) {
     return db.one(`
-      SELECT scores.id, happy, mad, url, result, users.name
+      SELECT scores.id, happy, mad, url, result, users.name, users.email
       FROM scores INNER JOIN users
       ON scores.user_id = users.id
       WHERE scores.id = $1;
@@ -25,7 +25,6 @@ module.exports = {
     return db.one(`
       INSERT INTO scores
       (happy, mad, url, result, user_id)
-
       VALUES
       ($/happy/, $/mad/, $/url/, $/result/, $/user_id/)
       RETURNING *

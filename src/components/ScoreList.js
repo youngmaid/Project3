@@ -14,14 +14,14 @@ class ScoreList extends Component {
       scores: [],
       scoreListDataReceived: false,
   }
-  this.getAllScores = this.getAllScores.bind(this);
+  this.getScores = this.getScores.bind(this);
   }
 
   componentDidMount(){
-    this.getAllScores()
+    this.getScores()
   }
 
-  getAllScores() {
+  getScores() {
     axios.get('http://localhost:3001/api/scores')
    .then(res => {
      this.setState(prevState => {
