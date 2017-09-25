@@ -34,9 +34,17 @@ constructor(props) {
     this.handleImgSubmit = this.handleImgSubmit.bind(this);
     this.handleInputUserChange = this.handleInputUserChange.bind(this);
     this.handleInputResultChange = this.handleInputResultChange.bind(this);
+    this.reload = this.reload.bind(this);
+
+
   }
 
-handleInputURLChange (event)  {
+  reload() {
+    console.log("I'm reloading")
+    window.location.reload()
+  }
+
+  handleInputURLChange (event)  {
     this.setState({
       inputURLValue: event.target.value
     });
@@ -89,7 +97,7 @@ handleImgSubmit(event) {
       sentence: result[1]
     })
   }).catch(err => {
-  this.setState({showLoader: false})
+  this.setState({showLoader: false, sentence: "Unable to Process. Please upload a valid photo URL of a human face."})
   console.log(err)
   })
 }
@@ -161,6 +169,7 @@ handleImgSubmit(event) {
           <p>{this.state.sentence}</p>
           {loader}
           {showimg}
+          <button onClick={this.reload}>click here to reload</button>
         </div>
         <div className="App">
         <InputForm handleInputFormSubmit={this.handleInputFormSubmit}

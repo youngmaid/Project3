@@ -1,7 +1,7 @@
 const scoreDB = require('../models/scoreDB');
 const algorithmia = require("algorithmia");
 
-var api_key =  // PLEASE COPY AND PASTE MY API KEY HERE!!
+var api_key = process.env.API_KEY // PLEASE COPY AND PASTE MY API KEY HERE!!
 // IF YOU DONT DO THIS THE APP WILL NOT WORK!!!.
 
 var client = algorithmia(api_key);
@@ -21,7 +21,7 @@ module.exports = {
   "numResults": 7
 };
 
-    //Algorithmia.client("simSjj4D3o74j8nEEeWInGtEiW/1")
+
 
           client
            .algo("algo://deeplearning/EmotionRecognitionCNNMBP/1.0.1")
