@@ -26,9 +26,9 @@ class InputForm extends Component {
 
          <input
           type="text"
-          value={this.props.inputURLValue}
+          value={this.props.inputimg}
           name="url"
-          placeholder="Add IMG Url Here"
+          placeholder="url"
           onChange={this.props.handleInputURLChange}
         /><br/>
 
@@ -36,7 +36,7 @@ class InputForm extends Component {
           type="text"
           value={this.props.result}
           name="result"
-          placeholder="enter result here"
+          placeholder="result"
           onChange={this.props.handleInputResultChange}
         /><br/>
 

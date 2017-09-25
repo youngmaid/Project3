@@ -31,4 +31,4 @@
 ![group project 3 pic 4](https://user-images.githubusercontent.com/15146933/30602821-bb83959e-9d33-11e7-847a-7fa8650508ca.JPG)
 
 # Technologies used
-React.js, Express.js, PSQL, Microsoft Emotion API
+React.js, Express.js, PSQL, Algorithmia Emotion API
