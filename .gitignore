@@ -3,6 +3,7 @@ logs
 *.log
 npm-debug.log*
 
+# ignore package lock so we don't have conflicts on github
 package-lock.json
 
 # Runtime data
@@ -38,4 +39,5 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
+# ignore the file where the API key is located so it doesn't get pushed to github
 .env

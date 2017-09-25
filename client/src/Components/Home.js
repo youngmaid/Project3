@@ -19,12 +19,14 @@ constructor(props) {
         showLoader: false,
         showImg: false,
         faceBorder: false,
+        bbox: []
 
 
     }
 
     this.handleinputImgChange = this.handleinputImgChange.bind(this);
     this.handleImgSubmit = this.handleImgSubmit.bind(this);
+    this.reload = this.reload.bind(this);
   }
 
 
@@ -50,6 +52,11 @@ handleImgSubmit(event) {
 
     })
     console.log(res.data.data)
+    console.log(res.data.bbox)
+    this.setState({
+      bbox: res.data.bbox
+    })
+    console.log(this.state.bbox)
     const result = calculateResult(res.data.data)
      console.log(result)
     this.setState({
@@ -57,14 +64,17 @@ handleImgSubmit(event) {
       sentence: result[1]
     })
   }).catch(err => {
-  this.setState({showLoader: false})
+  this.setState({showLoader: false, sentence: "Unable to Process. Please upload a valid photo URL of a human face."})
   console.log(err)
   });
 
-
-
-
 };
+
+
+reload() {
+console.log("I'm reloading")
+window.location.reload()
+}
 
 
 
@@ -106,6 +116,7 @@ handleImgSubmit(event) {
           <p>{this.state.sentence}</p>
           {loader}
           {showimg}
+          <button onClick={this.reload}>click here to reload</button>
         </div>
 
     );

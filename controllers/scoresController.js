@@ -29,7 +29,8 @@ module.exports = {
            .then(function(response) {
              console.log(response.get().results[0].emotions[0]);
              var responseData = response.get().results[0].emotions;
-             res.json({data: responseData});
+             var bbox = response.get().results[0].bbox
+             res.json({data: responseData, bbox: bbox});
             //res.json({ data: {response.get()},
           })
 
