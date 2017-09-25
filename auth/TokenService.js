@@ -1,17 +1,36 @@
-// const jwt    = require('jsonwebtoken');
+const jwt    = require('jsonwebtoken');
 
-// module.exports = {
-//   makeToken: payload => jwt.sign(
-//     payload,
-//     process.env.SERVER_SECRET,
-//     { expiresIn: '1h' },
-//     Promise.resolve(),
-//   ),
+module.exports = {
+  makeToken(payload) {
+    return new Promise((resolve, reject) => {
+      jwt.sign(
+        payload,
+        process.env.SERVER_SECRET,
+        { expiresIn: '1h' },
+        (err, data) => err ? reject(err) : resolve(data),
+      )
+    });
+  },
 
-//   verify: token => jwt.verify(
-//     token,
-//     process.env.SERVER_SECRET,
-//     Promise.resolve(),
-//   ),
+  verify(){
+    return new Promise((resolve, reject) => {
+      jwt.verify(
+        token,
+        process.env.SERVER_SECRET,
+        (err, data) => err ? reject(err) : resolve(data),
+      )
+    });
+  },
 
-// };
+  receiveToken(req, res, next) {
+    if(req.headers.authorization) {
+      req.authToken = req.headers.authorization.replace(/^Bearer\s/, '');
+    }
+    next();
+
+
+// decode(token) {
+
+// }
+}
+};

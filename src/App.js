@@ -3,16 +3,12 @@ import './App.css';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import axios from 'axios';
 
-
-
 import Home from './components/Home';
 import FaceForm from './components/FaceForm';
 import About from './components/About';
 import ScoreList from './components/ScoreList';
 import SingleScore from './components/SingleScore';
 import Hero from './components/Hero';
-
-
 import Header from './components/partials/Header';
 import Footer from './components/partials/Footer';
 import tokenService from './services/TokenServices';
@@ -30,7 +26,6 @@ class App extends Component {
     this.handleLoginForm = this.handleLoginForm.bind(this);
     this.getScores = this.getScores.bind(this);
   }
-
 
   componentDidMount() {
     this.state.auth && this.getScores();
@@ -72,9 +67,9 @@ class App extends Component {
           <Switch>
             <Route exact path='/api/scores/:id' component={SingleScore} />
             <Route exact path='/api/scores' component={ScoreList} />
-            <Route exact path='/' component={FaceForm} />
             <Route exact path='/add' component={Home} />
             <Route exact path='/about' component={About} />
+            <Route exact path='/' component={FaceForm} />
             <Redirect to='/' />
           </Switch>
         </main>

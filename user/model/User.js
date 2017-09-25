@@ -5,14 +5,8 @@
  * Each function returns a promise
  */
 
-// TODO: [1] require pg-promise, and execute it like a function.
 // TODO: [2] require our DB config
-const pgp      = require('pg-promise')();
-const dbConfig = require('../../config/dbConfig');
-
-
-// execute pgp with our db config, so a connection is made.
-const db = pgp(dbConfig);
+const db = require('../../config/dbConfig');
 
 // @see https://github.com/vitaly-t/pg-promise#query-result-mask
 
@@ -28,7 +22,7 @@ module.exports = {
     return db.many(`
       SELECT *
         FROM users
-    ORDER BY id
+     ORDER BY id
     `);
   },
 
@@ -59,19 +53,17 @@ module.exports = {
   save(user) {
     return db.one(`
       INSERT INTO users
-      (email, password, vendor, vendor_id)
+      (name, email, password)
       VALUES
-      ($/email/, $/password/, $/vendor/, $/vendor_id/)
+      ($/name/, $/email/, $/password/)
       ON CONFLICT (email) DO UPDATE
       SET
+      name = $/name/,
       email = $/email/,
       password = $/password/,
-      vendor = $/vendor/,
-      vendor_id = $/vendor_id/,
       RETURNING *
     `, user);
   },
-
 
   /**
    * Removes one user from DB

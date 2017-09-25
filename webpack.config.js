@@ -20,8 +20,8 @@ if (!('NODE_ENV' in process.env)) require('dotenv').config();
 
 const config = {
   entry: {
-    main:   `${APP_DIR}/main.jsx`,
-    vendor: ['axios', 'react', 'react-dom', 'prop-types'],
+    main:   `${APP_DIR}/index.js`,
+    vendor: ['axios', 'react', 'react-dom', 'prop-types', 'history', 'react-router', 'react-router-dom'],
   },
   output: {
     path:     BUILD_DIR,

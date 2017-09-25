@@ -10,7 +10,7 @@ let db;
 
 if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
   db = pgp({
-    database: 'scores_dev',
+    database: 'faces_dev',
     port: 5432,
     host: 'localhost',
   });
