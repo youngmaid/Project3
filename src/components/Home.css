@@ -1,0 +1,41 @@
+body {
+ +  background-color: pink;
+ +}
+ +
+ +h3 {
+ +  text-align: center;
+ +  color: white;
+ +  font-size: 70px;
+ +  text-shadow: 0 0 17px #FF0000, 0 0 26px #0000FF;
+ +  margin-top: -1px;
+ +}
+ +
+ +a {
+ +  color: white;
+ +  text-shadow: 0 0 7px #FF0000, 0 0 11px #0000FF;
+ +  font-size: 23px;
+ +  text-decoration: none;
+ +  width: 100px;
+ +  height: 100px;
+ +  transition: width 2s;
+ +}
+ +
+ +.faceImg {
+ +  background-image: url('https://23887-presscdn-pagely.netdna-ssl.com/wp-content/uploads/2017/09/08Hg0mPiGp_0wNpFM.jpg');
+ +  background-position: center;
+ +  height: 400px;
+ +  width: 55%;
+ +  text-align: center;
+ +  padding: 5px;
+ +  background-image: center;
+ +}
+ +
+ +.showscore {
+ +  text-align: center;
+ +  color: white;
+ +  text-shadow: 0 0 7px #FF0000, 0 0 11px #0000FF;
+ +  font-size: 30px;
+ +  margin-top: 330px;
+ +  padding: 5px;
+ +}
+View

@@ -1,43 +1,60 @@
 .border {
-  border: 5px solid red;
-}
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  border: 5px solid black;
+  width: 250px;
+  height: 300px;
+  position: center;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-#imgList {
-  width: 50px;
-  height: 50px;
-}
-
-img {
-  width: 100%;
+.border img {
+  object-fit: cover;
   height: 100%;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  max-width: 100%;
 }
 
 ul {
   display: flex;
   justify-content: space-around;
   list-style: none;
+}
+
+body {
+  background-image: url("http://tpucdn.com/npu/img/2014/06-11/9577-25c20cff.jpg");
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: grey;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  text-shadow: 0 0 13px white, 0 0 15px white;
+}
+
+h3 {
+  font-size: 45px;
+  color: white;
+  text-shadow: 0 0 22px blue, 0 0 29px blue;
+}
+
+p {
+  color: white;
+  text-shadow: 0 0 22px black, 0 0 29px black;
+
+}
+
+#submit {
+  text-shadow: 0 0 22px black, 0 0 29px black;
+  width: 150px;
+  text-align: center;
+  color: white;
+  display: inline-block;
+}
+
+input {
+  width: 250px;
+  text-align: center;
 }
