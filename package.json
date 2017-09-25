@@ -1,9 +1,10 @@
 {
-  "name": "project3",
-  "version": "1.0.0",
-  "description": "GA WDI group project-3",
-  "main": "server.js",
-  "dependencies": {
+"name": "project3",
+"version": "1.0.0",
+"description": "GA WDI group project-3",
+"main": "server.js",
+
+"dependencies": {
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.1",
     "cors": "^2.8.4",
@@ -16,7 +17,8 @@
     "path": "^0.12.7",
     "pg-promise": "^6.7.1"
   },
-  "devDependencies": {
+
+"devDependencies": {
     "algorithmia": "^0.3.10",
     "axios": "^0.16.2",
     "babel-core": "^6.26.0",
@@ -53,7 +55,8 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0"
   },
-  "scripts": {
+
+"scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "nodemon server.js",
@@ -62,19 +65,17 @@
     "watch": "webpack -d --progress --watch",
     "build": "webpack -p"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@git.generalassemb.ly:Zarrina/Project3.git"
-  },
-  "contributors": [
-    "Richard Boles <email> (website)",
-    "Richard Boles <email> (website)",
-    "Richard Boles <email> (website)",
-  ],
-  "license": "ISC",
-  "engines": {
-  "node": ">=8.5.0"
-  }
 
-},
+"repository": {
+    "type": "git",
+    "url": "git@github.com:Project3ZNR/Project3.git"
+  },
+
+"contributors": "Zarrina, Natasha, Richard",
+
+"license": "ISC",
+
+"engines": {"node": ">=8.5.0"}
+
+}
 
