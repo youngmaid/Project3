@@ -6,7 +6,7 @@ class Header extends Component {
     return (
       <nav>
         <ul>
-          <li><Link to='/'>Home</Link></li>
+
           <li><Link to='/api/scores'>Faces</Link></li>
           <li><Link to='/about'>About</Link></li>
           <li><Link to='/add'>Form</Link></li>
@@ -17,3 +17,5 @@ class Header extends Component {
 }
 
 export default Header;
+
+// <li><Link to='/'>Home</Link></li>

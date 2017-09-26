@@ -9,12 +9,10 @@ class Score extends Component {
       <div id='imgList'>
         <img src={this.props.score.url} />
       </div>
-        <h3>{this.props.score.url}</h3>
-        <h3>{this.props.score.name}</h3>
-        <h3>{this.props.score.result}</h3>
-        <h3>{this.props.score.happy}</h3>
-        <h3>{this.props.score.mad}</h3>
-        <Link to={`/api/scores/${this.props.score.id}`}>See score </Link>
+        <h3 className="scoreItem">{this.props.score.result}</h3>
+        <h3 className="scoreItem">{this.props.score.happy}</h3>
+        <h3 className="scoreItem">{this.props.score.mad}</h3>
+        <Link id="scoreLink" to={`/api/scores/${this.props.score.id}`}>See score details</Link>
 
       </div>
     );

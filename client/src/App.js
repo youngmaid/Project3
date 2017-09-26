@@ -9,9 +9,7 @@ import FaceForm from './components/FaceForm';
 import About from './components/About';
 import ScoreList from './components/ScoreList';
 import SingleScore from './components/SingleScore';
-
 import Header from './components/partials/Header';
-import Footer from './components/partials/Footer';
 import tokenService from './services/TokenServices';
 
 

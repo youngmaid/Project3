@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Loading from './partials/Loading';
 import axios from 'axios';
 import { Route, Redirect } from 'react-router';
-import history from './partials/History';
 import ScoreList from './ScoreList';
 
 
