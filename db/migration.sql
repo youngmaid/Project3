@@ -10,8 +10,8 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
 id SERIAL PRIMARY KEY,
-name VARCHAR(255)
-email varchar(128) PRIMARY KEY,
+name VARCHAR(255),
+email varchar(128),
 password text NOT NULL,
 vendor varchar(64),
 vendor_id varchar(64),
