@@ -3,7 +3,7 @@ const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { authRouter, AuthService } = require('./auth');
+//const { authRouter, AuthService } = require('./auth');
 
 const app = express();
 

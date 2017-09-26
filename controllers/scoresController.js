@@ -1,7 +1,7 @@
 const scoreDB = require('../models/scoreDB');
 const algorithmia = require("algorithmia");
 
-var api_key = process.env.API_KEY // PLEASE COPY AND PASTE MY API KEY HERE!!
+var api_key = "simSjj4D3o74j8nEEeWInGtEiW/1"; // PLEASE COPY AND PASTE MY API KEY HERE!!
 // IF YOU DONT DO THIS THE APP WILL NOT WORK!!!.
 
 var client = algorithmia(api_key);
@@ -36,6 +36,7 @@ module.exports = {
 },
 
   index(req, res) {
+    console.log('in index');
     scoreDB.findAll()
      .then(scores => {
        res.json({
@@ -44,7 +45,7 @@ module.exports = {
        });
       })
       .catch(err => {
-        console.log(err);
+        console.log('test ' + err);
         res.status(400).json({message: '400', err});
       });
     },
