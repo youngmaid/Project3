@@ -13,12 +13,12 @@
     The landing page will display the title of the app at the top and a place to insert the  image. They can chose to upload a file or enter a url. Also, on the landing page is a link to the about page that will explain everything about the app. After submitting an image the computer will show the results of happiness, sadness, surprise, anger, fear, contempt, disgust and neutral. After the image is shown there will also be questions that pop up to ask the user if they are mad or angry. After viewing the results the user can pick a different image to get results for. 
 
 ## Timeline and Responsibilities:
-    Creating the CRUD - Zarrina - by 9/19/2017
-    Coding the React.js - Natasha - by 9/22/2017
-    Combing Express and React - by 9/22/2017
-    Microsoft API key - Richard - by 9/22/17
-    CSS - Richard - by 9/22/17
-    Testing Authorization - by 9/22/17
+  Full CRUD Node Express and database - Zarrina 09/19/2017
+React.js - Natasha, Zarrina 09/22/2017
+Algorithmia API, calculation algorithm - Natasha 09/23/2017
+Connecting front-end to the back-end, Full React CRUD - Zarrina 09/23/2017 
+CSS - Natasha, Zarrina, Richard 09/26/2017
+Testing Authorization - Zarrina 09/25/2017
 
 ## Images
 
@@ -32,3 +32,40 @@
 
 # Technologies used
 React.js, Express.js, PSQL, Algorithmia Emotion API
+
+# Alogrithm to Calculate RBF Syndrome
+'''
+export default function calculateResult(data) {
+  const results = {}
+  data.forEach((emotion) => {
+    results[emotion.label] = emotion.confidence
+  })
+  console.log(results)
+  if (results["Happy"] >= 0.9){
+    return [0, "This person does not have resting bitch face. They are probably smiling all the time, appearing friendly and gregarious to strangers. They are frequently asked for directions by lost tourists."]
+
+  } else if (results["Neutral"] >= .4 && results["Disgust"] >= .3 && results["Happy"] < .1) {
+    return [4, "A small to medium amount of resting bitch face is detected. This person needs a hug."]
+
+  } else if ((results["Neutral"] >= .7) && (results["Angry"] >= .2 ||
+    results["Disgust"] >= .2 || results["Sad"] >= .2)) {
+  return [8, "This person has a high-medium amount of resting bitch face, but may just be having a bad day."]
+
+  } else if (results["Neutral"] >= .5 && (results["Angry"] >= .1 ||
+    results["Disgust"] >= .1 || results["Sad"] >= .1)) {
+    return [5, "This person has mild resting bitch face."]
+
+  } else if (results["Neutral"] >= .8 && results["Happy"] < .1) {
+    return [10, "This person has a high amount of resting bitch face and will kill you with their stare"]
+
+
+  } else if (results["Neutral"] >= .7 && results["Happy"] < .1) {
+     return [6, "This person has a medium amount of resting bitch face detected and is nice to you once you get to know them."]
+
+
+  } else {
+    return [1, "We cannot detect resting bitch face"]
+  }
+}
+  '''
+
