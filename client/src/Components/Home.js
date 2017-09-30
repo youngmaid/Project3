@@ -159,8 +159,8 @@ handleImgSubmit(event) {
       }
     return (
       <div>
-        <div>
-          <h3>Hi! Welcome to RBF Detector!</h3>
+        <div className="form">
+          <h3 id="form-header">Hi! Welcome to RBF Detector!</h3>
           <ImgForm handleImgSubmit={this.handleImgSubmit}
                      handleinputImgChange={this.handleinputImgChange}
                      inputimg={this.state.inputimg}
@@ -171,7 +171,7 @@ handleImgSubmit(event) {
           {showimg}
           <button onClick={this.reload}>click here to reload</button>
         </div>
-        <div className="App">
+        <div className="App" id="formfont">
         <InputForm handleInputFormSubmit={this.handleInputFormSubmit}
                  inputMadValue={this.state.inputMadValue}
                  handleInputMadChange={this.handleInputMadChange}

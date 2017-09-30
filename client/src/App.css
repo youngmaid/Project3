@@ -1,3 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto');
+
+body{
+  background-color:#629d9d;
+}
+
+/*** MOBILE FIRST ***/
+
+/** HEADER AREA **/
+#navfont{
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.5em;
+  list-style: none;
+  margin:4% 1%;
+}
+
+#navfont li {
+  display:inline;
+  margin:0% 5%;
+}
+
+#navfont li a {
+  color:#000000;
+  text-decoration: none;
+}
+
+#navfont li a:hover {
+  background-color: #ffffff;
+  text-decoration: underline;
+}
+
+/** ABOUT AREA **/
+#about-txt {
+  font-family:'Roboto', sans-serif;
+  width:75%;
+  margin:0% 10%;
+}
+
+#form-header {
+ font-family: 'Gloria Hallelujah', cursive;
+ font-size:1.5em;
+ text-align: center;
+}
+
+ {
+  font-family: 'Gloria Hallelujah', cursive;
+  margin:0% 30%;
+}
+
+.form {
+  font-family: 'Gloria Hallelujah', cursive;
+  margin:0% 30%;
+}
+
+#formfont {
+  font-family: 'Gloria Hallelujah', cursive;
+  margin:0% 30%;
+}
+
+button {
+  border:1px solid #000000;
+  background-color: #d0e2e2;
+  margin:0% 2%;
+}
+
+/** TABLET/DESKTOP **/
+/** HEADER AREA **/
+@media screen and (min-width: 769px) {
+  #navfont{
+    margin:1% 12%;
+   }
+
+  #navfont li {
+  margin:2% 10%;
+  }
+
+  #about-txt {
+    padding:2%;
+  }
+
+}
+
+
+
+/**
 .border {
   border: 5px solid black;
   width: 250px;
@@ -157,3 +242,5 @@ input:hover {
   margin-top: 0;
   margin-bottom: 0;
 }*/
+
+
